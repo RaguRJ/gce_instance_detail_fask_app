@@ -13,7 +13,7 @@ gce_nics = requests.get(metadata_server + 'network-interfaces/', headers = metad
 gce_zone = requests.get(metadata_server + 'zone', headers = metadata_flavor).text
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def hello():
     return render_template('index.html', gce_id=gce_id, gce_name=gce_name, gce_machine_type=gce_machine_type, gce_nics=gce_nics, gce_zone=gce_zone)
 
