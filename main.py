@@ -19,7 +19,7 @@ gce_parsed = json.dumps(json.loads(gce_all), indent=4, sort_keys=True)
 
 @app.route("/", methods=["GET"])
 def hello():
-    return render_template('index.html', gce_parsed=gce_parsed)
+    return render_template('index.html', gce_all=gce_all)
 
 
 if __name__ == "__main__":
