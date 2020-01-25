@@ -12,7 +12,7 @@ metadata_flavor = {'Metadata-Flavor' : 'Google'}
 # gce_machine_type = requests.get(metadata_server + 'machine-type', headers = metadata_flavor).text
 # gce_nics = requests.get(metadata_server + 'network-interfaces/', headers = metadata_flavor).text
 # gce_zone = requests.get(metadata_server + 'zone', headers = metadata_flavor).text
-gce_all = requests.get(metadata_server + '?recursive=true&alt=text', headers = metadata_flavor).text
+gce_all = requests.get(metadata_server + '?recursive=true', headers = metadata_flavor).text
 gce_parsed = json.dumps(json.loads(gce_all), indent=4, sort_keys=True)
 
 
