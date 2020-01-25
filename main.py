@@ -16,7 +16,7 @@ gce_all = requests.get(metadata_server + '?recursive=true&alt=text', headers = m
 
 @app.route("/", methods=["GET"])
 def hello():
-    return render_template('index.html', gce_id=gce_all)
+    return render_template('index.html', gce_all=gce_all)
 
 
 if __name__ == "__main__":
